@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ParOuImpar</string>
+    <string name="par">Par</string>
+    <string name="impar">impar</string>
+    <string name="zero">0</string>
+    <string name="um">1</string>
+    <string name="dois">2</string>
+    <string name="tres">3</string>
+    <string name="quatro">4</string>
+    <string name="cinco">5</string>
+    <string name="selecione_uma_opcao">Selecione uma opção:</string>
+    <string name="selecione_sua_jogada">Selecione sua jogada:</string>
+    <string name="resultado">Resultado:</string>
+</resources>
