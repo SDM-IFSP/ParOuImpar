@@ -11,33 +11,39 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+import br.edu.ifsp.scl.sdm.parouimpar.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     //ref
-    private RadioGroup opcaoRg;
-    private Button zeroBt, umBt, doisBt, tresBt, quartroBt, cincoBt;
-    private TextView resultadoTv;
+    private ActivityMainBinding activityMainBinding;
+
+    //private RadioGroup opcaoRg;
+    //private Button zeroBt, umBt, doisBt, tresBt, quartroBt, cincoBt;
+    //private TextView resultadoTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
 
-        opcaoRg = findViewById(R.id.opcaoRg);
-        zeroBt = findViewById(R.id.zeroBt);
-        umBt = findViewById(R.id.umBt);
-        doisBt = findViewById(R.id.doisBt);
-        tresBt = findViewById(R.id.tresBt);
-        quartroBt = findViewById(R.id.quatroBt);
-        cincoBt = findViewById(R.id.cincoBt);
-        resultadoTv = findViewById(R.id.resultadoTv);
+        setContentView(activityMainBinding.getRoot());
 
-        zeroBt.setOnClickListener(this);
-        umBt.setOnClickListener(this);
-        doisBt.setOnClickListener(this);
-        tresBt.setOnClickListener(this);
-        quartroBt.setOnClickListener(this);
-        cincoBt.setOnClickListener(this);
+//        activityMainBinding = findViewById(R.id.opcaoRg);
+//        activityMainBinding = findViewById(R.id.zeroBt);
+//        activityMainBinding = findViewById(R.id.umBt);
+//        activityMainBinding = findViewById(R.id.doisBt);
+//        activityMainBinding = findViewById(R.id.tresBt);
+//        activityMainBinding = findViewById(R.id.quatroBt);
+//        activityMainBinding = findViewById(R.id.cincoBt);
+//        activityMainBinding = findViewById(R.id.resultadoTv);
+
+        activityMainBinding.zeroBt.setOnClickListener(this);
+        activityMainBinding.umBt.setOnClickListener(this);
+        activityMainBinding.doisBt.setOnClickListener(this);
+        activityMainBinding.tresBt.setOnClickListener(this);
+        activityMainBinding.quatroBt.setOnClickListener(this);
+        activityMainBinding.cincoBt.setOnClickListener(this);
     }
 
 
@@ -77,13 +83,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         resultadoSb.append(" , Computador");
         resultadoSb.append(jogadaComputador);
 
-        if (opcaoRg.getCheckedRadioButtonId() == R.id.parRb){
+        if (activityMainBinding.opcaoRg.getCheckedRadioButtonId() == R.id.parRb){
             resultadoSb.append( (jogada + jogadaComputador) % 2 == 0? "Você ganhou!" : "Você Perdeu!");
         }
         else {
             resultadoSb.append( (jogada + jogadaComputador) % 2 == 0? "Você perdeu!" : "Você ganhou!");
         }
 
-        resultadoTv.setText(resultadoSb.toString());
+        activityMainBinding.resultadoTv.setText(resultadoSb.toString());
     }
 }
