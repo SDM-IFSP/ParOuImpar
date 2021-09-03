@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -38,12 +39,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        activityMainBinding = findViewById(R.id.cincoBt);
 //        activityMainBinding = findViewById(R.id.resultadoTv);
 
-        activityMainBinding.zeroBt.setOnClickListener(this);
-        activityMainBinding.umBt.setOnClickListener(this);
-        activityMainBinding.doisBt.setOnClickListener(this);
-        activityMainBinding.tresBt.setOnClickListener(this);
-        activityMainBinding.quatroBt.setOnClickListener(this);
-        activityMainBinding.cincoBt.setOnClickListener(this);
+//        activityMainBinding.zeroBt.setOnClickListener(this);
+//        activityMainBinding.umBt.setOnClickListener(this);
+//        activityMainBinding.doisBt.setOnClickListener(this);
+//        activityMainBinding.tresBt.setOnClickListener(this);
+//        activityMainBinding.quatroBt.setOnClickListener(this);
+//        activityMainBinding.cincoBt.setOnClickListener(this);
+
+        activityMainBinding.mostrarOpcao.setOnCheckedChangeListener((__, mostrarOpcoes) -> {
+                activityMainBinding.selecionarOp.setVisibility(mostrarOpcoes?View.VISIBLE:View.GONE);
+        });
+
     }
 
 
@@ -75,6 +81,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void jogarParOuImpar(int jogada){
         Random random = new Random((System.currentTimeMillis()));
         int jogadaComputador = random.nextInt(6);
+
+        int imageJogadaComputadorId = -1;
+        switch (jogadaComputador) {
+            case 0:
+                imageJogadaComputadorId = R.mipmap.zero;
+                break;
+            case 1:
+                imageJogadaComputadorId = R.mipmap.one;
+                break;
+            case 2:
+                imageJogadaComputadorId = R.mipmap.two;
+                break;
+            case 3:
+                imageJogadaComputadorId = R.mipmap.three;
+                break;
+            case 4:
+                imageJogadaComputadorId = R.mipmap.four;
+                break;
+            case 5:
+                imageJogadaComputadorId = R.mipmap.five;
+                break;
+            default:
+                break;
+        }
+        activityMainBinding.jogadaComputador.setImageResource((imageJogadaComputadorId));
 
         StringBuilder resultadoSb = new StringBuilder();
         resultadoSb.append("Sua Jogada: ");

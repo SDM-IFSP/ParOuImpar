@@ -7,6 +7,20 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/mostrarOpcao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/mostrar_op_es" />
+
+    <LinearLayout
+        android:id="@+id/selecionarOp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,6 +47,7 @@
             android:layout_weight="1"
             android:text="@string/impar"/>
     </RadioGroup>
+</LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -44,52 +59,69 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/zeroBt"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="64dp"
+            android:src="@mipmap/zero"
+            android:scaleType="fitCenter"
             android:layout_marginHorizontal="5dp"
-            android:text="@string/zero"/>
-        <Button
+            android:layout_weight="1" />
+
+        <ImageButton
             android:id="@+id/umBt"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="64dp"
+            android:src="@mipmap/one"
+            android:scaleType="fitCenter"
             android:layout_marginHorizontal="5dp"
-            android:text="@string/um" />
-        <Button
+            android:layout_weight="1" />
+
+        <ImageButton
             android:id="@+id/doisBt"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="64dp"
+            android:src="@mipmap/two"
+            android:scaleType="fitCenter"
             android:layout_marginHorizontal="5dp"
-            android:text="@string/dois" />
-        <Button
+            android:layout_weight="1" />
+
+        <ImageButton
             android:id="@+id/tresBt"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="64dp"
+            android:src="@mipmap/three"
+            android:scaleType="fitCenter"
             android:layout_marginHorizontal="5dp"
-            android:text="@string/tres" />
-        <Button
+            android:layout_weight="1" />
+
+        <ImageButton
             android:id="@+id/quatroBt"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="64dp"
+            android:src="@mipmap/four"
+            android:scaleType="fitCenter"
             android:layout_marginHorizontal="5dp"
-            android:text="@string/quatro" />
-        <Button
+            android:layout_weight="1" />
+
+        <ImageButton
             android:id="@+id/cincoBt"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="64dp"
+            android:src="@mipmap/five"
+            android:scaleType="fitCenter"
             android:layout_marginHorizontal="5dp"
-            android:text="@string/cinco" />
-
-
-
+            android:layout_weight="1" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jogada_do_computador" />
+    <ImageView
+        android:id="@+id/jogadaComputador"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp" />
 
     <TextView
         android:layout_width="match_parent"
@@ -98,6 +130,7 @@
 
     <TextView
         android:id="@+id/resultadoTv"
+        android:textSize="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

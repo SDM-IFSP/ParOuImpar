@@ -11,4 +11,6 @@
     <string name="selecione_uma_opcao">Selecione uma opção:</string>
     <string name="selecione_sua_jogada">Selecione sua jogada:</string>
     <string name="resultado">Resultado:</string>
+    <string name="jogada_do_computador">Jogada do computador:</string>
+    <string name="mostrar_op_es">Mostrar Opções</string>
 </resources>
